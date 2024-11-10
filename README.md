@@ -4,18 +4,15 @@
 * docs.rs: https://docs.rs/egui-themes
 * Github: https://github.com/Resonanz/egui-themes
 
-# egui-themes
-Super-simple color theming for egui.
+## What is egui-themes
 
-If dependencies in ```Cargo.toml``` need updating, or you have suggestions for improvements, please submit an issue on Github.
-
-## Purpose
-
-This crate provides super simple theming capability for egui projects.
+egui-themes is a crate that provides super-simple color theming capability for egui projects.
 
 The current theme colors are taken from Catppuccin (https://crates.io/keywords/catppuccin).
 
 Additional color themes may be added. Please submit your own and I may incorporate them into this crate.
+
+Please submit an issue on Github if you have suggestions or improvements.
 
 ## Usage
 
@@ -26,48 +23,60 @@ In ```Cargo.toml``` add the following dependency:
 egui-themes = 0.1.0  <--- The latest version number can be found on Crates.io.
 ```
 
-If you want to develop this crate locally, use the following dependency:
+Or you could use the following if developing locally:
 ```
 [dependencies]
 egui-themes = { path = "/Github/egui-themes/" }
 ```
 
-Import the crate using:
+### The following asumes you are using eframe_template:
+
+In ```app.rs``` import the crate using:
 
 ```use egui_themes::{StateMachine, MOCHA};```
 
-Set a variable to hold the current theme. If you are using eframe_template, you could add the following inside the ```TemplateApp``` struct:
+Using the ```TemplateApp``` struct, define a ```run_once``` boolean and a ```StateMachine``` variable to hold the current theme:
 
 ```
 pub struct TemplateApp {
+    run_once: bool,
     my_theme: StateMachine,
 }
 
 impl Default for TemplateApp {
     fn default() -> Self {
         Self {
+            run_once: false,
             my_theme: egui_themes::StateMachine::new(),
         }
     }
 }
 ```
 
-Set the startup theme state. If you are using eframe_template, you could add the following inside ```fn update...```:
+Inside ```fn update...``` set the startup theme state using the ```run_once``` boolean:
 
 ```
 fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
-    /* ========================= Run once ======================== */
     if self.run_once == false {
         self.run_once = true;
         self.my_theme.set_theme(ctx, &MOCHA);
     }
-    /* =========================================================== */
+```
+ Then in the main loop:
+
+```
+// Theme cycle button
+let b = ui.add(egui::Button::new("☀🌙").sense(Sense::click()));
+
+if b.clicked() {
+    self.my_theme.rotate_theme(&ctx);
+} else if b.hovered() {
+    b.on_hover_text("Click for next theme...");
+}
 ```
 
 
-## Video
+ 
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+## Video
+https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441
