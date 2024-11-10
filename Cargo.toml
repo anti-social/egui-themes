@@ -1,6 +1,6 @@
 [package]
 name = "egui-themes"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Rob Ward <rob@resona.nz>"]
 edition = "2021"
 include = ["LICENSE-MIT", "**/*.rs", "Cargo.toml"]
