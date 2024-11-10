@@ -66,4 +66,8 @@ fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
 
 
 ## Video
-[Screencast from 2024-11-10 15-57-42.webm](https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441)
+
+<video width="640" height="360" controls>
+  <source src="https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441" type="video/webm">
+  Your browser does not support the video tag.
+</video>
