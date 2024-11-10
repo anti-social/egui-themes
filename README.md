@@ -1,7 +1,13 @@
+## Links
+
+* Crates.io: https://crates.io/crates/egui-themes
+* docs.rs: https://docs.rs/egui-themes
+* Github: https://github.com/Resonanz/egui-themes
+
 # egui-themes
 Super-simple color theming for egui.
 
-If dependencies in ```Cargo.toml``` need updating, please submit an issue on https://github.com/Resonanz/egui-themes/issues.
+If dependencies in ```Cargo.toml``` need updating, or you have suggestions for improvements, please submit an issue on Github.
 
 ## Purpose
 
@@ -13,15 +19,50 @@ Additional color themes may be added. Please submit your own and I may incorpora
 
 ## Usage
 
+In ```Cargo.toml``` add the following dependency:
+
 ```
 [dependencies]
-egui-themes = 0.1.0
+egui-themes = 0.1.0  <--- The latest version number can be found on Crates.io.
 ```
+
+If you want to develop this crate locally, use the following dependency:
 ```
 [dependencies]
 egui-themes = { path = "/Github/egui-themes/" }
 ```
 
+Import the crate using:
+
+```use egui_themes::{StateMachine, MOCHA};```
+
+Set a variable to hold the current theme. If you are using eframe_template, you could add the following inside the ```TemplateApp``` struct:
+
+```
+pub struct TemplateApp {
+    my_theme: StateMachine,
+}
+
+impl Default for TemplateApp {
+    fn default() -> Self {
+        Self {
+            my_theme: egui_themes::StateMachine::new(),
+        }
+    }
+}
+```
+
+Set the startup theme state. If you are using eframe_template, you could add the following inside ```fn update...```:
+
+```
+fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
+    /* ========================= Run once ======================== */
+    if self.run_once == false {
+        self.run_once = true;
+        self.my_theme.set_theme(ctx, &MOCHA);
+    }
+    /* =========================================================== */
+```
 
 
 ## Video
