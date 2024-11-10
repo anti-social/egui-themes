@@ -7,6 +7,9 @@ include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
 rust-version = "1.82"
 repository = "https://github.com/resonanz/egui-themes"
 keywords = ["egui", "eframe", "ui", "themes", "widget"]
+description = "Super-simple color theming for egui"
+license = "MIT"
+documentation = "https://docs.rs/egui-themes"
 
 [dependencies]
 egui = "0.29.1"
