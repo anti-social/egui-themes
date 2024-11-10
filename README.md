@@ -4,7 +4,7 @@
 * docs.rs: https://docs.rs/egui-themes
 * Github: https://github.com/Resonanz/egui-themes
 
-## What is egui-themes
+## What is egui-themes?
 
 egui-themes is a crate that provides super-simple color theming capability for egui projects.
 
@@ -76,7 +76,7 @@ if b.clicked() {
 ```
 
 
- 
+
 
 ## Video
 https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441
