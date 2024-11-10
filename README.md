@@ -29,11 +29,11 @@ Or you could use the following if developing locally:
 egui-themes = { path = "/Github/egui-themes/" }
 ```
 
-Import the crate using:
+### The following asumes you are using eframe_template:
+
+In ```app.rs``` import the crate using:
 
 ```use egui_themes::{StateMachine, MOCHA};```
-
-### The following asumes you are using eframe_template:
 
 Using the ```TemplateApp``` struct, define a ```run_once``` boolean and a ```StateMachine``` variable to hold the current theme:
 
@@ -64,7 +64,23 @@ fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
     }
     /* =========================================================== */
 ```
+ Then in the main loop:
 
+```
+/* =========================================================== */
+// Theme cycle button
+let b = ui.add(egui::Button::new("☀🌙").sense(Sense::click()));
+
+if b.clicked() {
+    self.my_theme.rotate_theme(&ctx);
+} else if b.hovered() {
+    b.on_hover_text("Click for next theme...");
+}
+/* =========================================================== */
+```
+
+
+ 
 
 ## Video
 https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441
