@@ -4,18 +4,15 @@
 * docs.rs: https://docs.rs/egui-themes
 * Github: https://github.com/Resonanz/egui-themes
 
-# egui-themes
-Super-simple color theming for egui.
+## What is egui-themes
 
-If dependencies in ```Cargo.toml``` need updating, or you have suggestions for improvements, please submit an issue on Github.
-
-## Purpose
-
-This crate provides super simple theming capability for egui projects.
+egui-themes is a crate that provides super-simple color theming capability for egui projects.
 
 The current theme colors are taken from Catppuccin (https://crates.io/keywords/catppuccin).
 
 Additional color themes may be added. Please submit your own and I may incorporate them into this crate.
+
+Please submit an issue on Github if you have suggestions or improvements.
 
 ## Usage
 
