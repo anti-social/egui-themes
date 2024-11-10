@@ -1,6 +1,8 @@
 # egui-themes
 Super-simple color theming for egui.
 
+If dependencies in ```Cargo.toml``` need updating, please submit an issue on https://github.com/Resonanz/egui-themes/issues.
+
 ## Purpose
 
 This crate provides super simple theming capability for egui projects.
