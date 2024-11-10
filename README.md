@@ -26,7 +26,7 @@ In ```Cargo.toml``` add the following dependency:
 egui-themes = 0.1.0  <--- The latest version number can be found on Crates.io.
 ```
 
-If you want to develop this crate locally, use the following dependency:
+Or you could use the following if developing locally:
 ```
 [dependencies]
 egui-themes = { path = "/Github/egui-themes/" }
@@ -36,23 +36,27 @@ Import the crate using:
 
 ```use egui_themes::{StateMachine, MOCHA};```
 
-Set a variable to hold the current theme. If you are using eframe_template, you could add the following inside the ```TemplateApp``` struct:
+### The following asumes you are using eframe_template:
+
+Using the ```TemplateApp``` struct, define a ```run_once``` boolean and a ```StateMachine``` variable to hold the current theme:
 
 ```
 pub struct TemplateApp {
+    run_once: bool,
     my_theme: StateMachine,
 }
 
 impl Default for TemplateApp {
     fn default() -> Self {
         Self {
+            run_once: false,
             my_theme: egui_themes::StateMachine::new(),
         }
     }
 }
 ```
 
-Set the startup theme state. If you are using eframe_template, you could add the following inside ```fn update...```:
+Inside ```fn update...``` set the startup theme state using the ```run_once``` boolean:
 
 ```
 fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
@@ -66,8 +70,4 @@ fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
 
 
 ## Video
-
-<video width="640" height="360" controls>
-  <source src="https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/ddcfce39-8377-440f-bce6-b98e7945c441
