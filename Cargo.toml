@@ -3,11 +3,11 @@ name = "egui-themes"
 version = "0.1.0"
 authors = ["Rob Ward <rob@resona.nz>"]
 edition = "2021"
-include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
+include = ["LICENSE-MIT", "**/*.rs", "Cargo.toml"]
 rust-version = "1.82"
 repository = "https://github.com/resonanz/egui-themes"
-keywords = ["egui", "eframe", "ui", "themes", "widget"]
-description = "Super-simple color theming for egui"
+keywords = ["eframe", "egui", "ui", "themes"]
+description = "Super-simple color theming for egui."
 license = "MIT"
 documentation = "https://docs.rs/egui-themes"
 
