@@ -57,17 +57,14 @@ Inside ```fn update...``` set the startup theme state using the ```run_once``` b
 
 ```
 fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
-    /* ========================= Run once ======================== */
     if self.run_once == false {
         self.run_once = true;
         self.my_theme.set_theme(ctx, &MOCHA);
     }
-    /* =========================================================== */
 ```
  Then in the main loop:
 
 ```
-/* =========================================================== */
 // Theme cycle button
 let b = ui.add(egui::Button::new("☀🌙").sense(Sense::click()));
 
@@ -76,7 +73,6 @@ if b.clicked() {
 } else if b.hovered() {
     b.on_hover_text("Click for next theme...");
 }
-/* =========================================================== */
 ```
 
 
