@@ -1,3 +1,6 @@
+# egui-themes
+An egui widget that provides super-simple color theming.
+
 ## Links
 
 * Crates.io: https://crates.io/crates/egui-themes
