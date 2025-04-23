@@ -43,7 +43,7 @@ fn update_theme(ctx: &egui::Context, theme: &ThemeColors, light_dark: LightDarkM
                     color: theme.overlay1,
                     width: 1.0,
                 },
-                rounding: egui::Rounding::ZERO,
+                corner_radius: egui::CornerRadius::ZERO,
                 fg_stroke: egui::Stroke {
                     color: theme.text,
                     width: 1.0,
@@ -57,7 +57,7 @@ fn update_theme(ctx: &egui::Context, theme: &ThemeColors, light_dark: LightDarkM
                     color: theme.overlay1,
                     width: 1.0,
                 },
-                rounding: egui::Rounding::ZERO,
+                corner_radius: egui::CornerRadius::ZERO,
                 fg_stroke: egui::Stroke {
                     color: theme.text,
                     width: 1.0,
@@ -71,7 +71,7 @@ fn update_theme(ctx: &egui::Context, theme: &ThemeColors, light_dark: LightDarkM
                     color: theme.overlay1,
                     width: 1.0,
                 },
-                rounding: egui::Rounding::ZERO, // egui::Rounding of highlight around button or label
+                corner_radius: egui::CornerRadius::ZERO, // egui::Rounding of highlight around button or label
                 fg_stroke: egui::Stroke {
                     color: theme.text,
                     width: 1.0,
@@ -85,7 +85,7 @@ fn update_theme(ctx: &egui::Context, theme: &ThemeColors, light_dark: LightDarkM
                     color: theme.overlay1,
                     width: 1.0,
                 },
-                rounding: egui::Rounding::ZERO,
+                corner_radius: egui::CornerRadius::ZERO,
                 fg_stroke: egui::Stroke {
                     color: theme.text,
                     width: 1.0,
@@ -99,7 +99,7 @@ fn update_theme(ctx: &egui::Context, theme: &ThemeColors, light_dark: LightDarkM
                     color: theme.overlay1,
                     width: 1.0,
                 },
-                rounding: egui::Rounding::ZERO,
+                corner_radius: egui::CornerRadius::ZERO,
                 fg_stroke: egui::Stroke {
                     color: theme.text,
                     width: 1.0,
@@ -123,12 +123,12 @@ fn update_theme(ctx: &egui::Context, theme: &ThemeColors, light_dark: LightDarkM
         code_bg_color: theme.mantle,
         warn_fg_color: theme.peach,
         error_fg_color: theme.maroon,
-        window_rounding: egui::Rounding::ZERO,
+        window_corner_radius: egui::CornerRadius::ZERO,
         window_shadow: egui::epaint::Shadow {
             color: theme.base,
-            offset: egui::Vec2 { x: 0.0, y: 0.0 },
-            blur: 0.0,
-            spread: 0.0,
+            offset: [0, 0],
+            blur: 0,
+            spread: 0,
         },
         window_fill: theme.base,
         window_stroke: egui::Stroke {
@@ -136,13 +136,13 @@ fn update_theme(ctx: &egui::Context, theme: &ThemeColors, light_dark: LightDarkM
             width: 1.0,
         },
         window_highlight_topmost: true,
-        menu_rounding: egui::Rounding::same(4.), // Menu dropdown and tooltip "on_hover_text" rounding
+        menu_corner_radius: egui::CornerRadius::same(4), // Menu dropdown and tooltip "on_hover_text" rounding
         panel_fill: theme.base,
         popup_shadow: egui::epaint::Shadow {
             color: theme.base,
-            offset: egui::Vec2 { x: 0.0, y: 0.0 },
-            blur: 0.0,
-            spread: 0.0,
+            offset: [0, 0],
+            blur: 0,
+            spread: 0,
         },
         resize_corner_size: 0.0,
         text_cursor: egui::style::TextCursorStyle {
